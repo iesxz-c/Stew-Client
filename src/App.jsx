@@ -4,27 +4,27 @@ import AuthPage from './pages/AuthPage/AuthPage';
 import HomePage from './pages/HomePAge/HomePage';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Navbar from './components/Navbar/Navbar';
-import Group from './pages/Group/Group';
-import { AuthProvider } from './context/AuthContext/AuthContext'; // Import your Auth Provider
-import { SocketProvider } from './context/SocketContext/SocketContext'; // Import your Socket Provider
+import GroupsPage from './pages/Group/GroupsPage';
+import ChatRoom from './pages/Group/ChatRoom';
 
 function App() {
+  
   return (
-    <AuthProvider>
-      <SocketProvider>
+    
         <>
           {window.location.pathname !== '/auth' && <Navbar />}
           <Routes>
             <Route element={<PrivateRoute />}>
               <Route path='/' element={<HomePage />} />
+              <Route path="/groups" element={<GroupsPage />} />
+              <Route path="/chatroom/:groupId" element={<ChatRoom />} />
               <Route path="/home" element={<HomePage />} />
-              <Route path='/group' element={<Group />} />
+              
             </Route>
             <Route path='/auth' element={<AuthPage />} />
           </Routes>
         </>
-      </SocketProvider>
-    </AuthProvider>
+
   );
 }
 

@@ -5,6 +5,7 @@ import axios from 'axios';
 import ChangePasswordModal from './ChangePasswordModal'; // Import the ChangePasswordModal component
 import { AiFillEdit } from 'react-icons/ai';
 
+
 function HomePage() {
   const [user, setUser] = useState(null);
   const [editData, setEditData] = useState({ name: '', email: '', username: '' });
@@ -12,6 +13,9 @@ function HomePage() {
   const [isEditProfileOpen, setIsEditProfileOpen] = useState(false); // State for edit profile modal
   const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false); // State for change password modal
   const toast = useToast();
+
+  const [username, setUsername] = useState(null);
+  const [groupId, setGroupId] = useState(null);
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -126,6 +130,9 @@ function HomePage() {
         </VStack>
       </Box>
       </Box>
+      <Box p={5}>
+</Box>
+
 
       {/* Edit Profile Modal */}
       <Modal isOpen={isEditProfileOpen} onClose={() => setIsEditProfileOpen(false)}>
