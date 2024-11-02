@@ -67,7 +67,7 @@ function AboutPage() {
                         transition={{ duration: 0.4, delay: 0.2 }}
                     >
                         <Flex alignItems="center" mt={4}>
-                            <Link href="https://www.instagram.com/ies.xz_c/" isExternal display="flex" alignItems="center" color="blue.600">
+                            <Link href="https://www.instagram.com/iesx.z_c/" isExternal display="flex" alignItems="center" color="blue.600">
                                 <Icon as={FaInstagram} w={6} h={6} mr={2} />
                                 <Text>Follow me on Instagram</Text>
                             </Link>
