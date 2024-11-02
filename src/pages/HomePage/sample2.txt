@@ -5,16 +5,13 @@ import axios from 'axios';
 import ChangePasswordModal from './ChangePasswordModal'; // Import the ChangePasswordModal component
 import { AiFillEdit } from 'react-icons/ai';
 import {useNavigate} from 'react-router-dom';
-import { Spinner } from '@chakra-ui/react';
 
 function HomePage() {
   const [user, setUser] = useState(null);
   const [editData, setEditData] = useState({ name: '', email: '', username: '' });
   const [profilePicture, setProfilePicture] = useState(null);
   const [isEditProfileOpen, setIsEditProfileOpen] = useState(false); // State for edit profile modal
-  const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
-   // State for change password modal
-  const [isLoading, setIsLoading] = useState(true);
+  const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false); // State for change password modal
   const toast = useToast();
   const navigate = useNavigate();
 
@@ -36,8 +33,6 @@ function HomePage() {
         });
       } catch (error) {
         console.error('Error fetching profile:', error);
-      }finally {
-        setIsLoading(false); // Stop loading
       }
     };
     fetchProfile();
@@ -101,49 +96,43 @@ function HomePage() {
   return (
     <Flex p={8}>
       <Box w="250px" mr={8}>
-        {isLoading ? ( // Conditional rendering based on loading state
-          <Flex justify="center" align="center" height="100%">
-            <Spinner size="xl" color="blue.500" /> {/* Styled Spinner */}
-          </Flex>
-        ) : (
-          <Box border="1px" borderColor="gray.200" borderRadius="md" p={4}>
-            <VStack align="start" spacing={4}>
-              <Box position="relative">
-                <Flex ml={10} align="center" justify="center"> 
-                  <Avatar size="xl" src={getProfilePictureUrl()} />
-                </Flex>
-                <IconButton 
-                  icon={<EditIcon />} 
-                  aria-label="Edit Profile Picture" 
-                  size="md" 
-                  colorScheme="" 
-                  color={"black"}
-                  onClick={() => setIsEditProfileOpen(true)} 
-                  position="absolute" 
-                  top="0" 
-                  right="0"
-                />
-                <Input 
-                  type="file" 
-                  id="fileInput" 
-                  accept="image/*" 
-                  hidden 
-                  onChange={handleProfilePictureChange} 
-                />
-              </Box>
-              <Text fontSize="lg" fontWeight="bold" alignSelf={"center"} mr={7} mt={2}>
-                {user?.name}
-              </Text>
-              <Text fontSize="md" color="gray.500">
-                Email : {user?.email}
-              </Text>
-              <Text fontSize="md" color="gray.500">
-                Username : {user?.username}
-              </Text>
-            </VStack>
+      <Box border="1px" borderColor="gray.200" borderRadius="md" p={4}>
+        <VStack align="start" spacing={4}>
+          
+          <Box position="relative">
+          <Flex ml={10} align="center" justify="center"> 
+            <Avatar size="xl" src={getProfilePictureUrl()}  />
+            </Flex>
+            <IconButton 
+              icon={<EditIcon />} 
+              aria-label="Edit Profile Picture" 
+              size="md" 
+              colorScheme="" 
+              color={"black"}
+              onClick={() => setIsEditProfileOpen(true)} // Open edit profile modal
+              position="absolute" 
+              top="0" 
+              right="0"
+            />
+            <Input 
+              type="file" 
+              id="fileInput" 
+              accept="image/*" 
+              hidden 
+              onChange={handleProfilePictureChange} 
+            />
           </Box>
-        )}
-  
+          <Text fontSize="lg" fontWeight="bold" alignSelf={"center"} mr={7} mt={2}>
+            {user?.name}
+          </Text>
+          <Text fontSize="md" color="gray.500">
+           Email : {user?.email}
+          </Text>
+          <Text fontSize="md" color="gray.500">
+            Username : {user?.username}
+          </Text>
+        </VStack>
+      </Box>
       <Box border="1px" borderColor="gray.200" borderRadius="md" p={4} mt={4}>
           <Grid templateColumns="repeat(2, 1fr)" gap={4}>
             <Box 
