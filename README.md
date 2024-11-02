@@ -1,4 +1,3 @@
-```markdown
 # Stew - Collaborative Study App
 
 Stew is a collaborative study application designed to enhance your learning experience through a range of interactive features. Whether you’re studying alone or in a group, Stew provides the tools you need to stay organized, connected, and engaged.
@@ -60,4 +59,3 @@ We welcome contributions to Stew! If you'd like to contribute, please fork the r
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-```
