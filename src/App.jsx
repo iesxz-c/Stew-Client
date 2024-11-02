@@ -10,6 +10,7 @@ import './App.css';
 import TimeTable from './pages/TimeTable/TimeTable';
 import Flashcards from './pages/Flashcard/Flashcards';
 import Task from './pages/Task/Task';
+import AboutPage from './pages/About/AboutPage'
 function App() {
   
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/flashcards" element={<Flashcards />} />
               <Route path="/TimeTable" element={<TimeTable />} />
               <Route path="/Task" element={<Task />} />
+              <Route path="/about" element={<AboutPage/>} />
             </Route>
             <Route path='/auth' element={<AuthPage />} />
           </Routes>
