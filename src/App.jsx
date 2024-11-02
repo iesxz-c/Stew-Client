@@ -11,6 +11,7 @@ import TimeTable from './pages/TimeTable/TimeTable';
 import Flashcards from './pages/Flashcard/Flashcards';
 import Task from './pages/Task/Task';
 import AboutPage from './pages/About/AboutPage'
+import DoubtChat from './pages/Doubt/DoubtChat';
 function App() {
   
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/TimeTable" element={<TimeTable />} />
               <Route path="/Task" element={<Task />} />
               <Route path="/about" element={<AboutPage/>} />
+              <Route path="/doubt" element={<DoubtChat/>} />
             </Route>
             <Route path='/auth' element={<AuthPage />} />
           </Routes>

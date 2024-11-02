@@ -224,10 +224,10 @@ function HomePage() {
               borderRadius="md" 
               textAlign="center" 
               cursor="pointer"
-              onClick={()=>handleNavigate('/Task')}
+              onClick={()=>handleNavigate('/doubt')}
               // /Task
             >
-              Quiz
+              Doubt ?
             </Box>
             <Box 
               bg="purple.100" 
