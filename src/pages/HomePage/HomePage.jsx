@@ -218,6 +218,28 @@ function HomePage() {
             >
               Tasks
             </Box>
+            <Box 
+              bg="gray.200" 
+              p={4} 
+              borderRadius="md" 
+              textAlign="center" 
+              cursor="pointer"
+              onClick={()=>handleNavigate('/Task')}
+              // /Task
+            >
+              Quiz
+            </Box>
+            <Box 
+              bg="purple.100" 
+              p={4} 
+              borderRadius="md" 
+              textAlign="center" 
+              cursor="pointer"
+              onClick={()=>handleNavigate('/about')}
+              // /Task
+            >
+              About
+            </Box>
           </Grid>
         </Box>
         
