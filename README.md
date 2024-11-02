@@ -19,22 +19,6 @@ Stew is a collaborative study application designed to enhance your learning expe
 
 - **Flashcards**: Create and review flashcards to reinforce your learning and improve retention of key concepts.
 
-## Screenshots
-
-Here are some screenshots of the Stew application:
-
-## Screenshots
-
-Here are some screenshots of the Stew application:
-
-![Stew-Home](assets/1.png)
-*Home*
-
-![Group Chat](assets/2.png)
-*Group Chat Interface*
-
-![Stew-Tasks](assets/3.png)
-*Tasks*
 
 ## Technologies Used
 
