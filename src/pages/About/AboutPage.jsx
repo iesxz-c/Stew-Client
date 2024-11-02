@@ -109,8 +109,8 @@ const GridFeatures = () => {
         },
         {
             icon: FaChalkboardTeacher,
-            title: "Interactive Quizzes & Flashcards",
-            description: "Test your knowledge with quizzes, create flashcards, and keep track of your study materials."
+            title: "Interactive Flashcards & AI Doubt Solving",
+            description: "Test your knowledge by creating flashcards, and keep track of your study materials. "
         }
     ];
 
