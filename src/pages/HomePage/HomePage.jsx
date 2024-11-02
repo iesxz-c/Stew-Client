@@ -173,9 +173,10 @@ function HomePage() {
               borderRadius="md" 
               textAlign="center" 
               cursor="pointer"
-            
+              onClick={()=>handleNavigate('/TimeTable')}
+            // 
             >
-              Messages
+              TimeTable
             </Box>
             <Box 
               bg="green.100" 
