@@ -23,13 +23,17 @@ Stew is a collaborative study application designed to enhance your learning expe
 
 Here are some screenshots of the Stew application:
 
-![Stew-Home](./assets/1.png)
+## Screenshots
+
+Here are some screenshots of the Stew application:
+
+![Stew-Home](assets/1.png)
 *Home*
 
-![Group Chat](./assets/2.png)
+![Group Chat](assets/2.png)
 *Group Chat Interface*
 
-![Stew-Tasks](./assets/3.png)
+![Stew-Tasks](assets/3.png)
 *Tasks*
 
 ## Technologies Used
