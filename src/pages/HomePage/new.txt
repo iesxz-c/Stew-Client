@@ -7,8 +7,6 @@ import { AiFillEdit } from 'react-icons/ai';
 import {useNavigate} from 'react-router-dom';
 import { Spinner } from '@chakra-ui/react';
 import ScoreGraph from '../Task/ScoreGraph';
-import { getTasks } from '../Task/api';
-import ScoreCircles from '../Task/ScoreCircles';
 
 function HomePage() {
   const [user, setUser] = useState(null);
@@ -24,31 +22,6 @@ function HomePage() {
   const [username, setUsername] = useState(null);
   const [groupId, setGroupId] = useState(null);
 
-  const [scores, setScores] = useState([]); 
-  const [token, setToken] = useState('');
-
-  useEffect(() => {
-    const fetchScores = async () => {
-        const storedToken = localStorage.getItem('token');
-        if (storedToken) {
-            setToken(storedToken);
-            try {
-                const response = await getTasks(storedToken);
-                const fetchedScores = response.data.map(task => task.score);
-                setScores(fetchedScores);
-            } catch (error) {
-                console.error('Error fetching scores:', error);
-            } finally {
-                setLoading(false);
-            }
-        } else {
-            console.error('No token found. Please log in.');
-            setLoading(false);
-        }
-    };
-
-    fetchScores();
-}, []);  
   useEffect(() => {
     const fetchProfile = async () => {
       try {
@@ -125,10 +98,9 @@ function HomePage() {
   const handleNavigate =(path) =>{
     navigate(path);
   }
-  
+
   return (
     <Flex p={8}>
-      
       <Box w="250px" mr={8}>
         {isLoading ? ( // Conditional rendering based on loading state
           <Flex justify="center" align="center" height="100%">
@@ -172,7 +144,7 @@ function HomePage() {
             </VStack>
           </Box>
         )}
-       
+  
       <Box border="1px" borderColor="gray.200" borderRadius="md" p={4} mt={4}>
           <Grid templateColumns="repeat(2, 1fr)" gap={4}>
             <Box 
@@ -220,11 +192,6 @@ function HomePage() {
             </Box>
           </Grid>
         </Box>
-        
-      </Box>
-      <Box border="1px" borderColor={"white"} w={"full"} h={"fit-content"}>
-        <ScoreCircles/>
-      <ScoreGraph scores={scores} /> 
       </Box>
      
 

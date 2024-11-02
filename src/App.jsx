@@ -9,6 +9,7 @@ import ChatRoom from './pages/Group/ChatRoom';
 import './App.css';
 import TimeTable from './pages/TimeTable/TimeTable';
 import Flashcards from './pages/Flashcard/Flashcards';
+import Task from './pages/Task/Task';
 function App() {
   
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/home" element={<HomePage />} />
               <Route path="/flashcards" element={<Flashcards />} />
               <Route path="/TimeTable" element={<TimeTable />} />
+              <Route path="/Task" element={<Task />} />
             </Route>
             <Route path='/auth' element={<AuthPage />} />
           </Routes>

@@ -1,0 +1,13 @@
+.score-graph-container {
+    background-color: #f8f9fa; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding around the chart */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h2 {
+    text-align: center; /* Center the title */
+    color: #333; /* Darker color for text */
+    font-family: 'Arial, sans-serif'; /* Consistent font family */
+    margin-bottom: 20px; /* Space between title and chart */
+}
