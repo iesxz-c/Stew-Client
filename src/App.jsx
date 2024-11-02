@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import GroupsPage from './pages/Group/GroupsPage';
 import ChatRoom from './pages/Group/ChatRoom';
 import './App.css';
+import Flashcards from './pages/Flashcard/Flashcards';
 function App() {
   
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/groups" element={<GroupsPage />} />
               <Route path="/chatroom/:groupId" element={<ChatRoom />} />
               <Route path="/home" element={<HomePage />} />
+              <Route path="/flashcards" element={<Flashcards />} />
               
             </Route>
             <Route path='/auth' element={<AuthPage />} />

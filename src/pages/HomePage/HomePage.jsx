@@ -152,6 +152,7 @@ function HomePage() {
               borderRadius="md" 
               textAlign="center" 
               cursor="pointer"
+              onClick={()=>handleNavigate('/flashcards')}
             >
               F-cards
 

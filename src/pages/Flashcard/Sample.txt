@@ -1,0 +1,71 @@
+
+import React, { useState, useEffect } from 'react';
+import { Container, Input, Button, VStack, Box, Heading, Text } from '@chakra-ui/react';
+import AxiosInstance from './AxiosInstance';
+const Flashcards = () => {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [flashcards, setFlashcards] = useState([]);
+  const [searchTitle, setSearchTitle] = useState('');
+
+  const fetchFlashcards = async () => {
+    try {
+      const response = await AxiosInstance.get('/flashcards');
+      setFlashcards(response.data);
+    } catch (error) {
+      console.error('Error fetching flashcards:', error);
+    }
+  };
+
+  const createFlashcard = async () => {
+    try {
+      await AxiosInstance.post('/flashcards/create', { title, content });
+      setTitle('');
+      setContent('');
+      fetchFlashcards();
+    } catch (error) {
+      console.error('Error creating flashcard:', error);
+    }
+  };
+
+  const deleteFlashcard = async (id) => {
+    try {
+      await AxiosInstance.delete(`/flashcards/delete/${id}`);
+      fetchFlashcards();
+    } catch (error) {
+      console.error('Error deleting flashcard:', error);
+    }
+  };
+
+  const searchFlashcards = async () => {
+    try {
+      const response = await AxiosInstance.get(`/flashcards/search?title=${searchTitle}`);
+      setFlashcards(response.data);
+    } catch (error) {
+      console.error('Error searching flashcards:', error);
+    }
+  };
+
+  return (
+    <Container>
+      <VStack spacing={4}>
+        <Heading>Flashcards</Heading>
+        <Input placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <Input placeholder="Content" value={content} onChange={(e) => setContent(e.target.value)} />
+        <Button colorScheme="teal" onClick={createFlashcard}>Create Flashcard</Button>
+        <Input placeholder="Search by Title" value={searchTitle} onChange={(e) => setSearchTitle(e.target.value)} />
+        <Button colorScheme="blue" onClick={searchFlashcards}>Search</Button>
+        <Button colorScheme="green" onClick={fetchFlashcards}>Fetch My Flashcards</Button>
+      </VStack>
+      {flashcards.map((flashcard) => (
+        <Box key={flashcard.id} p={4} borderWidth={1} borderRadius="md" mt={4}>
+          <Text fontSize="xl">{flashcard.title}</Text>
+          <Text>{flashcard.content}</Text>
+          <Button colorScheme="red" mt={2} onClick={() => deleteFlashcard(flashcard.id)}>Delete</Button>
+        </Box>
+      ))}
+    </Container>
+  );
+};
+
+export default Flashcards;
