@@ -183,7 +183,7 @@ function HomePage() {
               textAlign="center" 
               cursor="pointer"
             >
-              Settings
+              Issues??
             </Box>
           </Grid>
         </Box>
