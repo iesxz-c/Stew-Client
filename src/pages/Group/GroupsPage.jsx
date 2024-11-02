@@ -7,9 +7,14 @@ import {
     Input,
     List,
     ListItem,
-    ListIcon,
     IconButton,
     useToast,
+    Spinner,
+    Heading,
+    Text,
+    VStack,
+    HStack,
+    Divider,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { MdChat } from 'react-icons/md';
@@ -18,7 +23,9 @@ import axios from 'axios';
 const GroupsPage = () => {
     const [groups, setGroups] = useState([]);
     const [groupName, setGroupName] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(true); // Loading state
     const toast = useToast();
 
     useEffect(() => {
@@ -33,6 +40,8 @@ const GroupsPage = () => {
             setGroups(response.data);
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -114,51 +123,89 @@ const GroupsPage = () => {
         }
     };
 
+    const filteredGroups = groups.filter(group =>
+        group.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
-        <Box p={5}>
-            <FormControl mb={5}>
-                <FormLabel>Create a new group</FormLabel>
-                <Input
-                    value={groupName}
-                    onChange={(e) => setGroupName(e.target.value)}
-                    placeholder="Enter group name"
-                />
-                <Button mt={3} colorScheme="teal" onClick={createGroup}>
-                    Create Group
-                </Button>
-            </FormControl>
-            {error && <Box color="red.500">{error}</Box>}
-            <List spacing={3}>
-                {groups.map((group) => (
-                    <ListItem key={group.group_id}>
-                        <Box d="flex" justifyContent="space-between" alignItems="center">
-                            <Box>{group.name}</Box>
-                            <Box>
-                                <IconButton
-                                    as={Link}
-                                    to={`/chatroom/${group.group_id}`}
-                                    aria-label="Chat Room"
-                                    icon={<MdChat />}
-                                    colorScheme="blue"
-                                    mr={2}
-                                />
-                                <Button
-                                    colorScheme="red"
-                                    onClick={() => deleteGroup(group.group_id)}
-                                >
-                                    Delete
-                                </Button>
-                                <Button
-                                    colorScheme="green"
-                                    onClick={() => joinGroup(group.group_id)}
-                                >
-                                    Join
-                                </Button>
-                            </Box>
-                        </Box>
-                    </ListItem>
-                ))}
-            </List>
+        <Box p={5} maxW="600px" mx="auto">
+            <Heading mb={5} textAlign="center" color="teal.600">Groups</Heading>
+            <VStack spacing={5} align="stretch">
+                <FormControl>
+                    <FormLabel>Search Groups</FormLabel>
+                    <Input
+                        placeholder="Search by group name"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                </FormControl>
+
+                <FormControl>
+                    <FormLabel>Create a new group</FormLabel>
+                    <HStack>
+                        <Input
+                            value={groupName}
+                            onChange={(e) => setGroupName(e.target.value)}
+                            placeholder="Enter group name"
+                        />
+                        <Button colorScheme="teal" onClick={createGroup}>
+                            Create
+                        </Button>
+                    </HStack>
+                </FormControl>
+
+                {loading ? (
+                    <Box display="flex" justifyContent="center" mt={5}>
+                        <Spinner size="xl" color="teal.500" />
+                    </Box>
+                ) : (
+                    <List spacing={3}>
+                        {filteredGroups.length > 0 ? (
+                            filteredGroups.map((group) => (
+                                <ListItem key={group.group_id}>
+                                    <Box
+                                        p={4}
+                                        borderWidth="1px"
+                                        borderRadius="lg"
+                                        boxShadow="sm"
+                                        _hover={{ boxShadow: "md" }}
+                                        transition="0.2s ease"
+                                    >
+                                        <HStack justify="space-between">
+                                            <Text fontWeight="bold" color="gray.700">{group.name}</Text>
+                                            <HStack spacing={3}>
+                                                <IconButton
+                                                    as={Link}
+                                                    to={`/chatroom/${group.group_id}`}
+                                                    aria-label="Chat Room"
+                                                    icon={<MdChat />}
+                                                    colorScheme="blue"
+                                                />
+                                                <Button
+                                                    colorScheme="green"
+                                                    size="sm"
+                                                    onClick={() => joinGroup(group.group_id)}
+                                                >
+                                                    Join
+                                                </Button>
+                                                <Button
+                                                    colorScheme="red"
+                                                    size="sm"
+                                                    onClick={() => deleteGroup(group.group_id)}
+                                                >
+                                                    Delete
+                                                </Button>
+                                            </HStack>
+                                        </HStack>
+                                    </Box>
+                                </ListItem>
+                            ))
+                        ) : (
+                            <Text color="gray.500" textAlign="center">No groups found.</Text>
+                        )}
+                    </List>
+                )}
+            </VStack>
         </Box>
     );
 };

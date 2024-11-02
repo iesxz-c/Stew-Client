@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AuthPage from './pages/AuthPage/AuthPage';
-import HomePage from './pages/HomePAge/HomePage';
+import HomePage from './pages/HomePage/HomePage';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Navbar from './components/Navbar/Navbar';
 import GroupsPage from './pages/Group/GroupsPage';
 import ChatRoom from './pages/Group/ChatRoom';
-
+import './App.css';
 function App() {
   
   return (

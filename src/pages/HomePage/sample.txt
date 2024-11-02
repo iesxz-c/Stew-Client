@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Flex, Avatar, Text,Grid, Button, VStack, Input, IconButton, useToast, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from '@chakra-ui/react';
+import { Box, Flex, Avatar, Text, Button, VStack, Input, IconButton, useToast, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from '@chakra-ui/react';
 import { EditIcon } from '@chakra-ui/icons';
 import axios from 'axios';
 import ChangePasswordModal from './ChangePasswordModal'; // Import the ChangePasswordModal component
 import { AiFillEdit } from 'react-icons/ai';
-import {useNavigate} from 'react-router-dom';
+
 
 function HomePage() {
   const [user, setUser] = useState(null);
@@ -13,7 +13,6 @@ function HomePage() {
   const [isEditProfileOpen, setIsEditProfileOpen] = useState(false); // State for edit profile modal
   const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false); // State for change password modal
   const toast = useToast();
-  const navigate = useNavigate();
 
   const [username, setUsername] = useState(null);
   const [groupId, setGroupId] = useState(null);
@@ -89,9 +88,6 @@ function HomePage() {
       ? `http://localhost:5000/uploads/${user.profile_picture}`
       : ''; // URL from backend or empty string if no profile picture
   };
-  const handleNavigate =(path) =>{
-    navigate(path);
-  }
 
   return (
     <Flex p={8}>
@@ -133,52 +129,9 @@ function HomePage() {
           </Text>
         </VStack>
       </Box>
-      <Box border="1px" borderColor="gray.200" borderRadius="md" p={4} mt={4}>
-          <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-            <Box 
-              bg="blue.100" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-            >
-              F-cards
-
-            </Box>
-            <Box 
-              bg="pink.100" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-              onClick={()=>handleNavigate('/groups')}
-            >
-              Groups
-            </Box>
-            <Box 
-              bg="yellow.100" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-            
-            >
-              Messages
-            </Box>
-            <Box 
-              bg="green.100" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-            >
-              Settings
-            </Box>
-          </Grid>
-        </Box>
       </Box>
-     
-
+      <Box p={5}>
+</Box>
 
 
 

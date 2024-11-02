@@ -1,0 +1,20 @@
+
+::-webkit-scrollbar {
+    width: 5px; 
+    background-color: #f1f1f1; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #f8f6f6; /* Color of the scrollbar handle */
+    border-radius: 6px; /* Round edges for the handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #f0eaea; /* Color of the handle when hovered */
+}
+
+/* Optional: Style the scrollbar for Firefox */
+.scrollbar {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #e7e9e4 #f1f1f1; /* Handle and track colors */
+}
