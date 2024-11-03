@@ -56,6 +56,14 @@ Create and review flashcards to reinforce your learning and improve retention of
 - Review sessions that help you memorize definitions, formulas, and important information.
 - Categorization of flashcards for organized studying.
 
+### Frontend - Real-Time Group Chat
+
+Stew uses Socket.IO integrated within React.js to enable live message sending and receiving in group chats. When users join a group chat, they are connected to a dedicated room using their group ID. Messages are sent instantly to other members of the same room, who can view them without refreshing the page. Additional features include:
+
+- **Real-time updates**: Messages appear immediately for all participants.
+- **Member tracking**: Displays which users are currently in the chat.
+- **Notifications**: Alerts for new messages and user join/leave events.
+
 ## Technologies Used
 
 Stew leverages modern web technologies to provide a seamless user experience. Key technologies include:
