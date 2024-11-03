@@ -151,7 +151,7 @@ We welcome contributions to Stew! If you'd like to contribute, please follow the
 
 ## Backend Link
 
-The backend code for Stew is available on [GitHub here](https://github.com/iesxz-c/Stew-Sever).
+The backend code for Stew is available on [GitHub here](https://github.com/iesxz-c/Stew-Server).
 
 ## License
 
