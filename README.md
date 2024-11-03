@@ -89,13 +89,13 @@ To get started with the Stew frontend, follow these steps:
 1. **Clone the Repository**:
    Open your terminal and run the following command to clone the repository:
    ```bash
-   git clone https://github.com/iesxz-c/Stew.git
+   git clone https://github.com/iesxz-c/Stew-Client.git
    ```
 
 2. **Navigate to the Frontend Directory**:
    Change your current working directory to the frontend folder:
    ```bash
-   cd Stew/frontend
+   cd Stew-Client
    ```
 
 3. **Install the Dependencies**:
@@ -137,7 +137,7 @@ We welcome contributions to Stew! If you'd like to contribute, please follow the
    
 2. **Clone Your Fork**: Clone your forked repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/Stew.git
+   git clone https://github.com/iesxz-c/Stew-Client.git
    ```
 
 3. **Create a New Branch**: Always create a new branch for your feature or bug fix:
