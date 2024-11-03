@@ -133,7 +133,7 @@ function Task() {
                         <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" size="xl" />
                     </Box>
                 ) : (
-                    <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+                    <Grid templateColumns="repeat(2, 1fr)" gap={6}>
                         {tasks.map(task => (
                             <GridItem key={task.id} transition="transform 0.2s" _hover={{ transform: 'scale(1.05)' }}>
                                 <TaskCard
