@@ -149,6 +149,10 @@ We welcome contributions to Stew! If you'd like to contribute, please follow the
 
 6. **Create a Pull Request**: Go to the original repository and click on the "Pull Requests" tab to submit your changes.
 
+## Backend Link
+
+The backend code for Stew is available on [GitHub here](https://github.com/iesxz-c/Stew-Sever).
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
