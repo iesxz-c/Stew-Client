@@ -73,15 +73,6 @@ Stew leverages modern web technologies to provide a seamless user experience. Ke
 - **State Management**: Implemented using **React Context API** or **Redux** to manage global state across the application efficiently.
 - **Authentication**: Utilizing **JWT (JSON Web Tokens)** for secure user authentication.
 
-## Screenshots
-
-Here are some screenshots of the Stew application that showcase its features:
-
-![Stew-Home](assets/1.png)
-
-*Home Screen: Your central hub for managing study activities and progress.*
-
-
 ## Installation
 
 To get started with the Stew frontend, follow these steps:
