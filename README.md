@@ -40,7 +40,7 @@ To get started with the Stew frontend, follow these steps:
    ```
 
 5. **Open Your Browser**:
-   Navigate to `http://localhost:3000` in your web browser to access the application.
+   Navigate to `http://localhost:5173` in your web browser to access the application.
 
 ## Backend Link
 
