@@ -293,6 +293,22 @@ function HomePage() {
         >
           Whiteboard
         </Box>
+        <Box
+          bg="green.100"
+          p={4}
+          borderRadius="md"
+          textAlign="center"
+          cursor="pointer"
+          onClick={() => handleNavigate('/stress')}
+          _hover={{
+            transform: 'scale(1.05)',
+            boxShadow: 'lg',
+            bg: 'green.200',
+            transition: 'all 0.3s ease-in-out'
+          }}
+        >
+          Stress?
+        </Box>
       </Grid>
     </Box>
         
