@@ -68,7 +68,7 @@ const MemoryGame = () => {
   }, []);
 
   return (
-    <Box textAlign="center" p={4} bgGradient="linear(to-r, blue.500, purple.500)" minH="100vh">
+    <Box textAlign="center" alignItems={"center"}  justifyContent={"center"} p={4} bgGradient="linear(to-r, blue.500, purple.500)" minH="100vh">
       <Text fontSize="4xl" fontWeight="bold" color="white" mb={4}>
         {gameOver ? 'Game Over!' : 'Game Time'}
       </Text>
@@ -77,7 +77,7 @@ const MemoryGame = () => {
         <Text>Score: <ScaleFade in={!gameOver}><Text as="span">{score}</Text></ScaleFade></Text>
       </Flex>
 
-      <Grid templateColumns="repeat(6, 1fr)" gap={4} ml={10}>
+      <Grid templateColumns="repeat(6, 1fr)" gap={4} ml={118} >
         {cards.map((card, index) => (
           <MotionBox
             key={index}
