@@ -13,12 +13,13 @@ import Task from './pages/Task/Task';
 import AboutPage from './pages/About/AboutPage'
 import DoubtChat from './pages/Doubt/DoubtChat';
 import Integ from './componentes/Integ';
+import MemoryGame from './Game/MemoryGame';
 function App() {
   
   return (
     
         <>
-          {window.location.pathname !== '/auth' && <Navbar />}
+          {window.location.pathname !== '/auth' || '/stress'  && <Navbar />}
           <Routes>
             <Route element={<PrivateRoute />}>
               <Route path='/' element={<HomePage />} />
@@ -31,6 +32,7 @@ function App() {
               <Route path="/about" element={<AboutPage/>} />
               <Route path="/doubt" element={<DoubtChat/>} />
               <Route path='/whiteboard' element={<Integ/>}/>
+              <Route path='/stress' element={<MemoryGame/>}/>
             </Route>
             <Route path='/auth' element={<AuthPage />} />
           </Routes>
