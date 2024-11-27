@@ -10,6 +10,16 @@ Stew leverages modern web technologies to provide a seamless user experience. Ke
 - **Styling**: Enhanced user experience through **Chakra UI**, which offers a set of accessible and customizable components.
 - **State Management**: Implemented using **React Context API** or **Redux** to manage global state across the application efficiently.
 - **Authentication**: Utilizing **JWT (JSON Web Tokens)** for secure user authentication.
+- **Database**: Stores data in a **SQL** database
+- **Collaborative Whiteboard**: Real-time interaction powered by **Socket.IO** for instant updates across all connected users.
+- **Stress Relief Game**: Integrated with simple game logic and animations to provide a fun, interactive experience. 
+## New Features
+
+### 1. **Collaborative Whiteboard**
+Stew now includes a **Collaborative Whiteboard**, allowing users to draw, write, and brainstorm in real-time. This feature is perfect for group study sessions, where you can visually collaborate with your peers on concepts, equations, and diagrams. The whiteboard syncs instantly across all users' screens, providing a smooth and effective platform for collaboration.
+
+### 2. **Stress Relief Game**
+To ensure a balanced study experience, Stew offers a **Stress Relief Game**. This simple yet engaging game helps users unwind and refresh during study breaks. It’s designed to be fun and easy to play, helping to reduce stress and improve focus for your next study session.
 
 ## Installation
 
