@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Flex, Avatar, Text,Grid, Button, VStack, Input, IconButton, useToast, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from '@chakra-ui/react';
+import { Box, Flex, Avatar, Text,Grid, Button, VStack,  useDisclosure ,Input, IconButton, useToast, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter } from '@chakra-ui/react';
 import { EditIcon } from '@chakra-ui/icons';
 import axios from 'axios';
 import ChangePasswordModal from './ChangePasswordModal'; // Import the ChangePasswordModal component
@@ -173,75 +173,128 @@ function HomePage() {
           </Box>
         )}
        
-      <Box border="1px" borderColor="gray.200" borderRadius="md" p={4} mt={4}>
-          <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-            <Box 
-              bg="blue.100" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-              onClick={()=>handleNavigate('/flashcards')}
-            >
-              F-cards
-
-            </Box>
-            <Box 
-              bg="pink.100" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-              onClick={()=>handleNavigate('/groups')}
-            >
-              Groups
-            </Box>
-            <Box 
-              bg="yellow.100" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-              onClick={()=>handleNavigate('/TimeTable')}
-            // 
-            >
-              TimeTable
-            </Box>
-            <Box 
-              bg="green.100" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-              onClick={()=>handleNavigate('/Task')}
-              // /Task
-            >
-              Tasks
-            </Box>
-            <Box 
-              bg="gray.200" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-              onClick={()=>handleNavigate('/doubt')}
-              // /Task
-            >
-              Doubt ?
-            </Box>
-            <Box 
-              bg="purple.100" 
-              p={4} 
-              borderRadius="md" 
-              textAlign="center" 
-              cursor="pointer"
-              onClick={()=>handleNavigate('/about')}
-              // /Task
-            >
-              About
-            </Box>
-          </Grid>
+       <Box border="1px" borderColor="gray.200" borderRadius="md" p={4} mt={4}>
+      <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+        <Box
+          bg="blue.100"
+          p={4}
+          borderRadius="md"
+          textAlign="center"
+          cursor="pointer"
+          onClick={() => handleNavigate('/flashcards')}
+          _hover={{
+            transform: 'scale(1.05)', 
+            boxShadow: 'lg', 
+            bg: 'blue.200',
+            transition: 'all 0.3s ease-in-out'
+          }}
+        >
+          F-cards
         </Box>
+        
+        <Box
+          bg="pink.100"
+          p={4}
+          borderRadius="md"
+          textAlign="center"
+          cursor="pointer"
+          onClick={() => handleNavigate('/groups')}
+          _hover={{
+            transform: 'scale(1.05)',
+            boxShadow: 'lg',
+            bg: 'pink.200',
+            transition: 'all 0.3s ease-in-out'
+          }}
+        >
+          Groups
+        </Box>
+
+        <Box
+          bg="yellow.100"
+          p={4}
+          borderRadius="md"
+          textAlign="center"
+          cursor="pointer"
+          onClick={() => handleNavigate('/TimeTable')}
+          _hover={{
+            transform: 'scale(1.05)',
+            boxShadow: 'lg',
+            bg: 'yellow.200',
+            transition: 'all 0.3s ease-in-out'
+          }}
+        >
+          TimeTable
+        </Box>
+
+        <Box
+          bg="green.100"
+          p={4}
+          borderRadius="md"
+          textAlign="center"
+          cursor="pointer"
+          onClick={() => handleNavigate('/Task')}
+          _hover={{
+            transform: 'scale(1.05)',
+            boxShadow: 'lg',
+            bg: 'green.200',
+            transition: 'all 0.3s ease-in-out'
+          }}
+        >
+          Tasks
+        </Box>
+
+        <Box
+          bg="gray.200"
+          p={4}
+          borderRadius="md"
+          textAlign="center"
+          cursor="pointer"
+          onClick={() => handleNavigate('/doubt')}
+          _hover={{
+            transform: 'scale(1.05)',
+            boxShadow: 'lg',
+            bg: 'gray.300',
+            transition: 'all 0.3s ease-in-out'
+          }}
+        >
+          Doubt ?
+        </Box>
+
+        <Box
+          bg="purple.100"
+          p={4}
+          borderRadius="md"
+          textAlign="center"
+          cursor="pointer"
+          onClick={() => handleNavigate('/about')}
+          _hover={{
+            transform: 'scale(1.05)',
+            boxShadow: 'lg',
+            bg: 'purple.200',
+            transition: 'all 0.3s ease-in-out'
+          }}
+        >
+          About
+        </Box>
+
+        <Box
+          bg="green.100"
+          p={4}
+          borderRadius="md"
+          textAlign="center"
+          cursor="pointer"
+          onClick={() => handleNavigate('/whiteboard')}
+          _hover={{
+            transform: 'scale(1.05)',
+            boxShadow: 'lg',
+            bg: 'green.200',
+            transition: 'all 0.3s ease-in-out'
+          }}
+        >
+          Whiteboard
+        </Box>
+      </Grid>
+    </Box>
         
       </Box>
       <Box border="1px" borderColor={"white"} w={"full"} h={"fit-content"}>

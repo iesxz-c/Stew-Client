@@ -12,6 +12,7 @@ import Flashcards from './pages/Flashcard/Flashcards';
 import Task from './pages/Task/Task';
 import AboutPage from './pages/About/AboutPage'
 import DoubtChat from './pages/Doubt/DoubtChat';
+import Integ from './componentes/Integ';
 function App() {
   
   return (
@@ -29,6 +30,7 @@ function App() {
               <Route path="/Task" element={<Task />} />
               <Route path="/about" element={<AboutPage/>} />
               <Route path="/doubt" element={<DoubtChat/>} />
+              <Route path='/whiteboard' element={<Integ/>}/>
             </Route>
             <Route path='/auth' element={<AuthPage />} />
           </Routes>
