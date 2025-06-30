@@ -4,7 +4,7 @@ import { FaInstagram, FaUsers, FaTasks, FaComments, FaChalkboardTeacher } from '
 import LoadingScreen from './LoadingScreen';
 import { motion } from 'framer-motion';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 function AboutPage() {
     const [isLoading, setIsLoading] = useState(true);

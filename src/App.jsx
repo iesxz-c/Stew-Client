@@ -14,12 +14,16 @@ import AboutPage from './pages/About/AboutPage'
 import DoubtChat from './pages/Doubt/DoubtChat';
 import Integ from './componentes/Integ';
 import MemoryGame from './Game/MemoryGame';
+import { useLocation } from 'react-router-dom';
+
 function App() {
   
+  const location = useLocation();
+  const hideNavbarRoutes = ['/auth', '/stress'];
   return (
     
         <>
-          {window.location.pathname !== '/auth' || '/stress'  && <Navbar />}
+          {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
           <Routes>
             <Route element={<PrivateRoute />}>
               <Route path='/' element={<HomePage />} />

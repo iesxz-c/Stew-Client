@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { ChakraProvider, Box, Text, Flex, Spinner } from '@chakra-ui/react';
+import React from 'react';
+import { Box, Text, Flex } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box); // ✅ Updated
 
 const LoadingScreen = () => (
     <Flex direction="column" align="center" justify="center" h="100vh" bg="gray.100">

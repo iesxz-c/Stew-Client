@@ -16,7 +16,7 @@ const generateCards = () => {
   return shuffle(symbols);
 };
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const MemoryGame = () => {
   const [cards, setCards] = useState(generateCards());

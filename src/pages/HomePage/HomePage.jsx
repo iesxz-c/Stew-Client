@@ -39,11 +39,11 @@ function HomePage() {
             } catch (error) {
                 console.error('Error fetching scores:', error);
             } finally {
-                setLoading(false);
+                setIsLoading(false);
             }
         } else {
             console.error('No token found. Please log in.');
-            setLoading(false);
+            setIsLoading(false);
         }
     };
 
